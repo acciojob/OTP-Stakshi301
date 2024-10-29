@@ -12,4 +12,8 @@ inputs.forEach((input, index) => {
             inputs[index - 1].focus(); // Focus the previous input on backspace
         }
     });
+
+    input.addEventListener('focus', () => {
+        console.log(`Input ${index + 1} focused`); // Log the focus event
+    });
 });
