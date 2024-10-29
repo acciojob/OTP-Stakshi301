@@ -1,19 +1,23 @@
 const inputs = document.querySelectorAll('.code');
 
 inputs.forEach((input, index) => {
+    // Handle input event
     input.addEventListener('input', (e) => {
         if (e.target.value.length > 0 && index < inputs.length - 1) {
-            inputs[index + 1].focused(); // Focus the next input
+            inputs[index + 1].focus(); // Move focus to the next input
         }
     });
 
+    // Handle backspace event
     input.addEventListener('keydown', (e) => {
-        if (e.key === 'Backspace' && input.value.length === 0 && index > 0) {
-            inputs[index - 1].focused(); // Focus the previous input on backspace
+        if (e.key === 'Backspace') {
+            if (input.value === '') {
+                if (index > 0) {
+                    inputs[index - 1].focus(); // Move focus to the previous input
+                }
+            } else {
+                input.value = ''; // Clear the current input
+            }
         }
-    });
-
-    input.addEventListener('focused', () => {
-        console.log(`Input ${index + 1} focused`); // Log the focus event
     });
 });
