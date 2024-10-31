@@ -16,6 +16,6 @@ inputs.forEach((input, index) => {
     // Log focus events to verify
     input.addEventListener('focus', () => {
         console.log(`Input ${index + 1} is focused`);
-		document.activeElement;
+		 console.log('Currently focused element:', document.activeElement);
     });
 });
