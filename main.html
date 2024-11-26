@@ -1,28 +1,62 @@
 <!DOCTYPE html>
-
-<html>
-
+<html lang="en">
 <head>
-	<link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Verification</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+        #verification_heading {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+        #verification_subtext {
+            font-size: 1rem;
+            color: #555;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .code-container {
+            display: flex;
+            gap: 10px;
+        }
+        .code {
+            width: 50px;
+            height: 50px;
+            text-align: center;
+            font-size: 1.5rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            outline: none;
+        }
+        .code:focus {
+            border-color: #007BFF;
+            box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+        }
+    </style>
 </head>
-
 <body>
-	<!-- the entire body must be written by student -->
-  
-	 <h1 id="verification_heading">Verify Your Account</h1>
-    <h2 id="verification_subtext">We emailed you the six digit code to acciojob@gmail.com. Enter the code below to conform your email address.</h2>
-    
+    <h1 id="verification_heading">Verify Your Account</h1>
+    <h2 id="verification_subtext">
+        We emailed you the six-digit code to <strong>acciojob@gmail.com</strong>. Enter the code below to confirm your email address.
+    </h2>
     <div class="code-container">
-        <input type="text" class="code" maxlength="1" id="code-1" autofocus>
-        <input type="text" class="code" maxlength="1" id="code-2"> 
-        <input type="text" class="code" maxlength="1" id="code-3">
-        <input type="text" class="code" maxlength="1" id="code-4">
-        <input type="text" class="code" maxlength="1" id="code-5">
-        <input type="text" class="code" maxlength="1" id="code-6">
+        <input type="text" class="code" maxlength="1" id="code-1" autofocus aria-label="Digit 1">
+        <input type="text" class="code" maxlength="1" id="code-2" aria-label="Digit 2">
+        <input type="text" class="code" maxlength="1" id="code-3" aria-label="Digit 3">
+        <input type="text" class="code" maxlength="1" id="code-4" aria-label="Digit 4">
+        <input type="text" class="code" maxlength="1" id="code-5" aria-label="Digit 5">
+        <input type="text" class="code" maxlength="1" id="code-6" aria-label="Digit 6">
     </div>
-	<script type="text/javascript" src="./script.js">
-</script>
-
+    <script type="text/javascript" src="./script.js"></script>
 </body>
-
 </html>
