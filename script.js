@@ -1,17 +1,30 @@
-document.addEventListener('DOMContentLoaded', () => {
-  const inputs = document.querySelectorAll('.code');
+const first_input = document.querySelector('.code');
+first_input.focus();
 
-  inputs.forEach((input, index) => {
-    input.addEventListener('input', () => {
-      if (input.value && index < inputs.length - 1) {
-        inputs[index + 1].focus();
-      }
-    });
-
-    input.addEventListener('keydown', (e) => {
-      if (e.key === 'Backspace' && !input.value && index > 0) {
-        inputs[index - 1].focus();
-      }
-    });
-  });
+const allInputs = document.querySelectorAll('.code');
+allInputs.forEach((input) => {
+	input.addEventListener('input', (e) => {
+		const target = e.target;
+		const val = target.value;
+		if (val != "") {
+	        const next = target.nextElementSibling;
+	        if (next) {
+	            next.focus();
+	        }
+	    }
+	});
 });
+
+allInputs.forEach((input) => {
+	input.addEventListener('keyup', (e) => {
+		const target = e.target;
+		const key = e.key.toLowerCase();
+		if(key == 'backspace' || key == 'delete') {
+			const pre = target.previousElementSibling;
+			if(pre) {
+				pre.focus();
+				pre.value = '';
+			}
+		}
+	})
+})
